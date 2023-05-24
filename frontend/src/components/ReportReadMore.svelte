@@ -26,7 +26,8 @@
     justify-content: center;
   }
   .modal {
-    max-width: 60%;
+    width: 85%;
+    max-width: 600px;
     height: 100%;
     background-color: white;
   }
