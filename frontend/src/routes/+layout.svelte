@@ -17,7 +17,7 @@
 	<div class="app">
 		<div class="header">
 			<div class="title">
-				<h1>Riksdagskollen</h1>
+				<h1><a href="/">Riksdagskollen</a></h1>
 				<h5 class="source">Källa: Sveriges Riksdag</h5>
 			</div>
 			<nav>
@@ -35,15 +35,15 @@
 		flex-direction: column;
 		align-items: center;
 		width: 100%;
-		gap: 20px;
+		gap: 1rem;
 	}
 
 	.header {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 20px;
-		padding-top: 20px;
+		gap: 2rem;
+		padding-top: 1rem;
 	}
 	.title {
 		display: flex;
@@ -55,8 +55,13 @@
 		margin: 0;
 		display: inline-block;
 	}
+	h1 a{
+		text-decoration: none;
+		color: #000;
+	}
 	.source {
 		line-height: 80%;
+		font-weight: 100;
 	}
 
 	nav {
@@ -69,6 +74,6 @@
 	nav a {
 		text-decoration: underline;
 		color: #000;
-		font-size: 24px;
+		font-size: 1.5rem;
 	}
 </style>
