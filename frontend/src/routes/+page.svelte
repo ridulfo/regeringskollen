@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { getBetankande } from '../fetchers';
-	import Corner from '../components/Corner.svelte';
 	import ReportCard from '../components/ReportCard.svelte';
 	import { createQuery } from '@tanstack/svelte-query';
 
@@ -15,9 +14,6 @@
 	});
 	$: reports = $query.data || [];
 </script>
-
-<Corner />
-
 
 <div class="reports-container">
 	{#each reports as report}
