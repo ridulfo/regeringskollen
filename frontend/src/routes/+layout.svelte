@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import { browser } from '$app/environment';
 	import { QueryClient, QueryClientProvider } from '@tanstack/svelte-query';
 
@@ -11,18 +12,22 @@
 			}
 		}
 	});
+
+	$: isStart = $page.url.pathname === '/';
+	$: isAbout = $page.url.pathname === '/about';
 </script>
 
 <QueryClientProvider client={queryClient}>
 	<div class="app">
 		<div class="header">
 			<div class="title">
-				<h1><a href="/">Riksdagskollen</a></h1>
-				<h5 class="source">Källa: Sveriges Riksdag</h5>
+				<h1><a href="/">riksdagskollen</a></h1>
+				<h5 class="source">källa: sveriges riksdag</h5>
 			</div>
 			<nav>
-				<a href="/about">Om</a>
-				<a href="https://github.com/ridulfo/riksdagskollen">Källkod</a>
+				<a href="/" style={isStart ? 'text-decoration:none' : ''}>start</a>
+				<a href="/about" style={isAbout ? 'text-decoration:none' : ''}>om</a>
+				<a href="https://github.com/ridulfo/riksdagskollen">källkod</a>
 			</nav>
 		</div>
 		<slot />
@@ -35,7 +40,8 @@
 		flex-direction: column;
 		align-items: center;
 		width: 100%;
-		gap: 1rem;
+		gap: 2rem;
+		margin-bottom: 4rem;
 	}
 
 	.header {
@@ -55,7 +61,7 @@
 		margin: 0;
 		display: inline-block;
 	}
-	h1 a{
+	h1 a {
 		text-decoration: none;
 		color: #000;
 	}
@@ -69,7 +75,7 @@
 		display: flex;
 		flex: row;
 		justify-content: space-between;
-		width: 100%;
+		width: 110%;
 	}
 	nav a {
 		text-decoration: underline;
