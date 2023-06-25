@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Dokument } from '../types/betankande';
 	import ReportReadMore from './ReportReadMore.svelte';
+	import Button from './interactive/button.svelte';
 
 	export let document: Dokument;
 	let showModal = false;
@@ -14,7 +15,7 @@
 		<span>Date: {document.datum}</span>
 	</div>
 	<p>{@html document.notis}</p>
-	<button on:click={() => (showModal = true)}>Läs dokument</button>
+	<Button onClick={() => (showModal = true)}>Läs dokument</Button>
 	<ReportReadMore reportUrl={'https:' + document.dokument_url_html} {showModal} {closeModal} />
 </div>
 
@@ -37,16 +38,5 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-	}
-	button {
-    font-family: Playfair Display, serif;
-		background-color: #fff;
-		border: 1px solid black;
-		border-radius: 2px;
-		padding: 0.5rem;
-		cursor: pointer;
-		-webkit-box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.75);
-		-moz-box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.75);
-		box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.75);
 	}
 </style>
