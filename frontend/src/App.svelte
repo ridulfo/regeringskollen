@@ -2,6 +2,7 @@
   import { createQuery } from "@tanstack/svelte-query";
   import { getBetankande } from "./fetchers";
   import ReportCard from "./components/ReportCard.svelte";
+  import Corner from "./components/Corner.svelte";
 
   const query = createQuery({
     queryKey: ["reports"],
@@ -15,8 +16,9 @@
   $: reports = $query.data || [];
 </script>
 
+<Corner/>
 <div class="header">
-  <h1>Regeringskollen</h1>
+  <h1>Riksdagskollen</h1>
   <h3>Källa: Sveriges riksdag</h3>
 </div>
 
