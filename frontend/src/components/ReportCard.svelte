@@ -24,6 +24,7 @@
 		background-color: #fff;
 		height: 50%;
 		width: 80%;
+        max-width: 800px;
 		border: 1px solid black;
 		border-radius: 2px;
 		padding: 1rem;
